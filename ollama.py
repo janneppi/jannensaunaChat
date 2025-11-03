@@ -29,5 +29,5 @@ if response.message.tool_calls:
   # add the tool result to the messages
   messages.append({"role": "tool", "tool_name": call.function.name, "content": str(result)})
 
-  final_response = chat(model="qwen3", messages=messages, tools=[get_temperature], think=True)
+  final_response = chat(model="gemma3:270m", messages=messages, tools=[get_temperature], think=True)
   print(final_response.message.content)
